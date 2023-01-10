@@ -19,7 +19,8 @@
         "quotes": [
             "error",
             "single",
-            {"allowTemplateLiterals": true}
+            {   "avoidEscape": true,
+                "allowTemplateLiterals": true}
         ],
         "semi": [
             "error",
