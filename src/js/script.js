@@ -207,6 +207,7 @@
   class AmountWidget {
     constructor(element) {
       const thisWidget = this;
+      thisWidget.value = settings.amountWidget.defaultValue;
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
@@ -228,7 +229,6 @@
     }
     setValue(value) {
       const thisWidget = this;
-      thisWidget.value = settings.amountWidget.defaultValue;
       const newValue = parseInt(value);
 
       // TO DO: Add validation
