@@ -47,4 +47,5 @@
         "stylelint-config-standard-scss": "^5.0.0",
         "stylelint-scss": "^4.3.0"
     }
+   
 }
