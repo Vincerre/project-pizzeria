@@ -36,6 +36,14 @@ $base-size: 12px;
   &:hover {
     background: lighten($btn-bg, 3%);
   }
+
+  // CODE ADDED START
+  &.disabled, &[disabled] {
+    background: desaturate($btn-bg, 100%);
+    border-color: desaturate($btn-border, 100%);
+    cursor: not-allowed;
+  }
+  // CODE ADDED END
 }
 
 @mixin flex($flex-direction, $align-items, $justify-content) {
@@ -55,7 +63,7 @@ $base-size: 12px;
 @mixin accordion-closed() {
   position: relative;
   overflow: hidden;
-  transition: all 0.75s ease-in-out;
+  transition: all 0.25s ease-in-out;
   max-height: 0;
   transform: translate(0, 50%);
 }
