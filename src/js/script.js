@@ -367,8 +367,6 @@
       for (let cartProduct of thisCart.products) {
         thisCart.totalNumber = cartProduct.amount + thisCart.totalNumber;
         thisCart.subtotalPrice = cartProduct.price + thisCart.subtotalPrice;
-        thisCart.dom.totalNumber.innerHTML = thisCart.totalNumber;
-        thisCart.dom.subtotalPrice.innerHTML = thisCart.subtotalPrice;
       }
       if (thisCart.totalNumber === 0) {
         thisCart.deliveryFee = 0;
@@ -401,8 +399,8 @@
       const thisCart = this;
       const url = settings.db.url + '/' + settings.db.orders;
       const payload = {
-        address: thisCart.dom.address,
-        phone: thisCart.dom.phone,
+        address: thisCart.dom.address.value,
+        phone: thisCart.dom.phone.value,
         totalPrice: thisCart.totalPrice,
         subtotalPrice: thisCart.subtotalPrice,
         totalNumber: thisCart.totalNumber,
@@ -503,7 +501,6 @@
           return rawResponse.json();
         })
         .then(function (parsedResponse) {
-          console.log('parsed response', parsedResponse);
           thisApp.data.products = parsedResponse;
           thisApp.initMenu();
         });
