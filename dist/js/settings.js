@@ -9,6 +9,7 @@ export const select = {
     cart: '#cart',
     pages: '#pages',
     booking: '.booking-wrapper',
+    floorPlan: '.floor-plan',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -43,6 +44,10 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    submit: '.order-confirmation [type="submit"]',
+    starters: '.checkbox [name="starter"]',
+    phone: '[name="phone"]',
+    address: '[name="address"]',
   },
   nav: {
     links: '.main-nav a',
@@ -79,6 +84,7 @@ export const classNames = {
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
+    tableSelected: 'selected',
   },
   nav: {
     active: 'active',
@@ -110,9 +116,9 @@ export const settings = {
   db: {
     url: '//localhost:3131',
     products: 'products',
-    order: 'order',
-    booking: 'booking',
-    event: 'event',
+    orders: 'orders',
+    bookings: 'bookings',
+    events: 'events',
     dateStartParamKey: 'date_gte',
     dateEndParamKey: 'date_lte',
     notRepeatParam: 'repeat=false',

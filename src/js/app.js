@@ -10,6 +10,7 @@ const app = {
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
     const idFromHash = window.location.hash.replace('#/', '');
 
+    // eslint-disable-next-line no-unused-vars
     let pageMatchingHash = thisApp.pages[0].id;
 
     for (let page of thisApp.pages) {
@@ -69,7 +70,6 @@ const app = {
     });
   },
   initBooking: function () {
-    const thisApp = this;
     const bookingContainer = document.querySelector(select.containerOf.booking);
     new Booking(bookingContainer);
   },
