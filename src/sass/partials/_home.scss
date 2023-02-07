@@ -15,12 +15,25 @@
 }
 
 .link {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
   width: 49.5%;
   height: $base-size * 10;
   border-radius: $radius;
   background-size: cover;
   background-position: center;
-
+  & h5 {
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    color: $color-light;
+    font-size: 15px;
+    font-weight: 300;
+    transition: $transition;
+  }
   & a {
     display: flex;
     justify-content: center;
@@ -31,10 +44,15 @@
     transition: all 0.3s;
   }
 
-  &:hover a {
+  &:hover a{
     color: $color-light;
     transform: translate(0, -15%);
   }
+}
+
+.order-link:hover h5{
+  opacity: 1;
+  transform: translate(0, -195%);
 }
 
 .links {
