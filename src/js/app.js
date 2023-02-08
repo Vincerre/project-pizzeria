@@ -6,8 +6,11 @@ import Home from './components/Home.js';
 const app = {
   initPages: function () {
     const thisApp = this;
+
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    thisApp.homeLinks = document.querySelectorAll(select.nav.homeLinks);
+
     const idFromHash = window.location.hash.replace('#/', '');
 
     // eslint-disable-next-line no-unused-vars
@@ -20,6 +23,17 @@ const app = {
       }
     }
     thisApp.activatePage(idFromHash);
+
+    for (let link of thisApp.homeLinks) {
+      link.addEventListener('click', function (event) {
+        console.log('click');
+        const clickedElement = this;
+        event.preventDefault();
+        const id = clickedElement.getAttribute('href').replace('#', '');
+        thisApp.activatePage(id);
+        window.location.hash = '#/' + id;
+      });
+    }
 
     for (let link of thisApp.navLinks) {
       link.addEventListener('click', function (event) {
@@ -86,10 +100,10 @@ const app = {
     // console.log('classNames:', classNames);
     // console.log('settings:', settings);
     // console.log('templates:', templates);
+    thisApp.initHome();
     thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
-    thisApp.initHome();
     thisApp.initBooking();
   },
 };

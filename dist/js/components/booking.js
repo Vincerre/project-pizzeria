@@ -76,7 +76,7 @@ class Booking {
       }
     }
 
-    console.log('bookings', thisBooking.booked);
+    // console.log('bookings', thisBooking.booked);
 
     thisBooking.updateDOM();
   }
