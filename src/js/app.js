@@ -26,7 +26,6 @@ const app = {
 
     for (let link of thisApp.homeLinks) {
       link.addEventListener('click', function (event) {
-        console.log('click');
         const clickedElement = this;
         event.preventDefault();
         const id = clickedElement.getAttribute('href').replace('#', '');
